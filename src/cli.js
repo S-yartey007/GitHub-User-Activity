@@ -1,3 +1,4 @@
+import { getUserActivity } from "./api.js";
 function runCLI() {
   const args = process.argv.slice(2);
 
@@ -7,6 +8,7 @@ function runCLI() {
   }
 
   const username = args[0];
+  getUserActivity(username).then((data) => console.log(data));
   console.log(`Fetching activity for: ${username}...`);
 }
 
